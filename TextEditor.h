@@ -173,29 +173,29 @@ public:
 		{
 		}
 
-		static const LanguageDefinition& CPlusPlus();
-		static const LanguageDefinition& HLSL();
-		static const LanguageDefinition& GLSL();
-		static const LanguageDefinition& C();
-		static const LanguageDefinition& SQL();
-		static const LanguageDefinition& AngelScript();
-		static const LanguageDefinition& Lua();
+		IMGUI_API static const LanguageDefinition& CPlusPlus();
+		IMGUI_API static const LanguageDefinition& HLSL();
+		IMGUI_API static const LanguageDefinition& GLSL();
+		IMGUI_API static const LanguageDefinition& C();
+		IMGUI_API static const LanguageDefinition& SQL();
+		IMGUI_API static const LanguageDefinition& AngelScript();
+		IMGUI_API static const LanguageDefinition& Lua();
 	};
 
-	TextEditor();
-	~TextEditor();
+	IMGUI_API TextEditor();
+	IMGUI_API ~TextEditor();
 
-	void SetLanguageDefinition(const LanguageDefinition& aLanguageDef);
+	IMGUI_API void SetLanguageDefinition(const LanguageDefinition& aLanguageDef);
 	const LanguageDefinition& GetLanguageDefinition() const { return mLanguageDefinition; }
 
 	const Palette& GetPalette() const { return mPaletteBase; }
-	void SetPalette(const Palette& aValue);
+	IMGUI_API void SetPalette(const Palette& aValue);
 
 	void SetErrorMarkers(const ErrorMarkers& aMarkers) { mErrorMarkers = aMarkers; }
 	void SetBreakpoints(const Breakpoints& aMarkers) { mBreakpoints = aMarkers; }
 
-	void Render(const char* aTitle, const ImVec2& aSize = ImVec2(), bool aBorder = false);
-	void SetText(const std::string& aText);
+	IMGUI_API void Render(const char* aTitle, const ImVec2& aSize = ImVec2(), bool aBorder = false);
+	IMGUI_API void SetText(const std::string& aText);
 	std::string GetText() const;
 
 	void SetTextLines(const std::vector<std::string>& aLines);
@@ -207,7 +207,7 @@ public:
 	int GetTotalLines() const { return (int)mLines.size(); }
 	bool IsOverwrite() const { return mOverwrite; }
 
-	void SetReadOnly(bool aValue);
+	IMGUI_API void SetReadOnly(bool aValue);
 	bool IsReadOnly() const { return mReadOnly; }
 	bool IsTextChanged() const { return mTextChanged; }
 	bool IsCursorPositionChanged() const { return mCursorPositionChanged; }
@@ -262,7 +262,7 @@ public:
 	void Undo(int aSteps = 1);
 	void Redo(int aSteps = 1);
 
-	static const Palette& GetDarkPalette();
+	IMGUI_API static const Palette& GetDarkPalette();
 	static const Palette& GetLightPalette();
 	static const Palette& GetRetroBluePalette();
 
